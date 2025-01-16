@@ -3,7 +3,7 @@
 int main()
 {
 FILE *fa, *fb;
-int ca, cb;
+int ca;
 fa = fopen("q1_code.c", "r");
 if (fa == NULL){
 printf("Cannot open file \n");
@@ -13,34 +13,11 @@ fb = fopen("q1_code_out.c", "w");
 ca = getc(fa);
 while (ca != EOF)
 {
-    if(ca==' ')
-    {
-        putc(' ',fb);
-        while(ca==' ')
+    if (ca == ' ' || ca == '\t') {
+        putc(' ', fb);
+        while (ca == ' ' || ca== '\t') 
             ca = getc(fa);
-    }
-    if (ca=='/')
-    {
-        cb = getc(fa);
-        if (cb == '/')
-        {
-            while(ca != '\n')
-                ca = getc(fa);
-        }
-    
-        else if (cb == '*'){
-            do
-            {
-                while(ca != '*')
-                    ca = getc(fa);
-                    ca = getc(fa);
-            } while (ca != '/');
-        }
-        else
-        {
-            putc(ca,fb);
-            putc(cb,fb);
-        }
+        putc(ca, fb);
     }
     else
     { 
