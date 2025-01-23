@@ -1,0 +1,16 @@
+< main, 1, 1, Identifier >
+< int, 3, 2, Identifier >
+< a, 3, 3, Identifier >
+< b, 3, 4, Identifier >
+< sum, 3, 5, Identifier >
+< a, 4, 2, Identifier >
+< =, 4, 3, SpecialSymbol >
+< 1, 4, 5, NumericConstant >
+< b, 5, 2, Identifier >
+< =, 5, 3, SpecialSymbol >
+< 1, 5, 5, NumericConstant >
+< sum, 6, 2, Identifier >
+< =, 6, 3, SpecialSymbol >
+< a, 6, 5, Identifier >
+< +, 6, 6, SpecialSymbol >
+< b, 6, 8, Identifier >

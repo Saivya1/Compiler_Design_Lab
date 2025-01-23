@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 struct token {
     char token_name[64];
     int row, col;
@@ -178,10 +177,9 @@ struct token getNextToken(FILE *fin) {
     return tkn;
 }
 
-
-
 int main() {
     FILE *fin = fopen("testy.c", "r");  
+    FILE *out_fp = fopen("q2_out", "w");  
     if (fin == NULL) {
         printf("Unable to open the source file.\n");
         return 1;
@@ -191,11 +189,12 @@ int main() {
     while (1) {
         tkn = getNextToken(fin);  
         if (tkn.row == -1) break;  
+
         
-        // Print the token details
-        printf("<%s, %d, %d, %s>\n", tkn.token_name, tkn.row, tkn.col, tkn.type);
+        fprintf(out_fp, "<%s, %d, %d, %s>\n", tkn.token_name, tkn.row, tkn.col, tkn.type);
     }
 
     fclose(fin); 
+    fclose(out_fp); 
     return 0;
 }

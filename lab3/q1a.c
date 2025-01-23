@@ -15,10 +15,17 @@ int main()
     char c, buf[10];
     int row = 1, col = 1;
     FILE *fp = fopen("digit.c", "r");
+    FILE *out_fp = fopen("q1a_out", "w");
 
     if (fp == NULL)
     {
-        printf("Cannot open file \n");
+        printf("Cannot open input file \n");
+        exit(0);
+    }
+
+    if (out_fp == NULL)
+    {
+        printf("Cannot open output file \n");
         exit(0);
     }
 
@@ -40,7 +47,7 @@ int main()
                 tok.row = row;
                 tok.col = col;
                 strcpy(tok.type, "RelOP");
-                printf("< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
+                fprintf(out_fp, "< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
             }
             else
             {
@@ -49,7 +56,7 @@ int main()
                 tok.row = row;
                 tok.col = col;
                 strcpy(tok.type, "AssignOP");
-                printf("< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
+                fprintf(out_fp, "< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
             }
         }
         else if (c == '&' || c == '|' || c == '!')
@@ -67,7 +74,7 @@ int main()
             tok.row = row;
             tok.col = col;
             strcpy(tok.type, "LogOP");
-            printf("< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
+            fprintf(out_fp, "< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
         }
         else if (c == '<' || c == '>' || c == '!')
         {
@@ -83,7 +90,7 @@ int main()
             tok.row = row;
             tok.col = col;
             strcpy(tok.type, "RelOP");
-            printf("< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
+            fprintf(out_fp, "< %s, %d, %d, %s >\n", tok.token_name, tok.row, tok.col, tok.type);
         }
         else
         {
@@ -101,5 +108,6 @@ int main()
     }
 
     fclose(fp);
+    fclose(out_fp);
     return 0;
 }
