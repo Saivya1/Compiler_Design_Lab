@@ -1,0 +1,25 @@
+Lexeme Name    Type          Size    Identifier Number
+------------------------------------------------------
+sum            Identifier    3       1
+a              Identifier    1       2
+b              Identifier    1       3
+s              Identifier    1       4
+
+
+search         Identifier    6       5
+arr            Identifier    3       6
+key            Identifier    3       7
+i              Identifier    1       8
+for            Identifier    3       9
+true           Identifier    4       10
+false          Identifier    5       11
+
+
+main           Identifier    4       12
+status         Identifier    6       13
+printf         Identifier    6       14
+Enter          Identifier    5       15
+array          Identifier    5       16
+elements       Identifier    8       17
+scanf          Identifier    5       18
+
