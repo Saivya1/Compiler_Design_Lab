@@ -1,7 +1,7 @@
 main(){
-    int a,b;
-    char (i);
-    i = b+c;
-    a=10;
-    c=a; 
+    int x,y;
+    char c;
+    x = 5;
+    y = x;
+    c='a'; 
 }
