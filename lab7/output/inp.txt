@@ -1,0 +1,7 @@
+main(){
+    int a,b;
+    char (i);
+    i = b+c;
+    a=10;
+    c=a; 
+}
