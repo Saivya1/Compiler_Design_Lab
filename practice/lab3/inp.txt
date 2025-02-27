@@ -1,0 +1,11 @@
+main()
+{
+int a,b,sum;
+if(a == b){
+    !=
+    >=
+}
+a = 1;
+b = 1;
+sum = a + b;
+}
