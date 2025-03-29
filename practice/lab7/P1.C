@@ -5,7 +5,7 @@
 
 typedef enum
 {
-    MAIN,
+    MAIN = 1,
     INT,
     CHAR,
     ID,
